@@ -7,6 +7,7 @@ let eventos = [
 ];
 
 let contenedorEventos = document.getElementById('contenedor-eventos');
+let eventoTemplate = '';
 
 for (i = 0; i < eventos.length; i++) {
     eventoTemplate = `<div class="col">
@@ -15,16 +16,20 @@ for (i = 0; i < eventos.length; i++) {
 
               <div class="card-body">
                 <p class="card-text">Texto 1</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
               </div>
             </div>
           </div>`;
 
-    contenedorEventos.innerHTML += eventoTemplate
+    contenedorEventos.innerHTML += eventoTemplate;
 }
+
+
+
+let titulo = 'The amazing album example';
+let text = 'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.';
+
+let h1 = document.getElementById('h1_titulo');
+let p = document.getElementById('p_texto');
+
+h1.innerHTML = titulo;
+p.innerHTML = text;

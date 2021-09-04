@@ -15,8 +15,7 @@
 
   <!-- Bootstrap core CSS -->
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="./css/bootstrap.css" rel="stylesheet">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -32,26 +31,11 @@
       }
     }
   </style>
-
-
 </head>
 
 <body>
 
   <header>
-    <div class="collapse bg-dark" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background
-              context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off
-              to some social networking sites or contact information.</p>
-          </div>
-          <p>Hola, todo bien?</p>
-        </div>
-      </div>
-    </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
       <div class="container">
         <a href="#" class="navbar-brand d-flex align-items-center">
@@ -63,10 +47,6 @@
           </svg>
           <strong>Album</strong>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
-          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
       </div>
     </div>
   </header>
@@ -76,25 +56,22 @@
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">The amazing album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
-            etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p>
+          <h1 id="h1_titulo" class="fw-light"></h1>
+          <p id="p_texto" class="lead text-muted"></p>
         </div>
       </div>
     </section>
 
-    <div class="album py-5 bg-light">
-      <div class="container">
+    <section class="py-5 text-center container">
+      <div class="album py-5 bg-light">
+        <div class="container">
 
-        <div id="contenedor-eventos" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
+          <div id="contenedor-eventos" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <!-- Donde estan las fotos que se ven en el brave? -->
+          </div>
         </div>
       </div>
-    </div>
+  </section>
 
   </main>
 
@@ -103,15 +80,12 @@
       <p class="float-end mb-1">
         <a href="#">Back to top</a>
       </p>
-      <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-          href="../getting-started/introduction/">getting started guide</a>.</p>
+      <p class="mb-1">Webpage de Azar!</p>
+      
     </div>
   </footer>
 
-
   <script src="app.js"></script>
-
 
 </body>
 
