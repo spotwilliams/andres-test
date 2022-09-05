@@ -2,6 +2,7 @@
 
 namespace App\Actions\Jetstream;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Jetstream\Contracts\CreatesTeams;
@@ -13,7 +14,7 @@ class CreateTeam implements CreatesTeams
     /**
      * Validate and create a new team for the given user.
      *
-     * @param  mixed  $user
+     * @param  User  $user
      * @param  array  $input
      * @return mixed
      */
