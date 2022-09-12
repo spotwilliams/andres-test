@@ -2,32 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use Illuminate\Support\Facades\Request;
+use App\Actions\Products\ListOfProducts;
+use App\Actions\Products\ProductFilter;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class ProductsController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, ListOfProducts $listOfProducts)
     {
         // images can be transformed in a subselect query
-        $products = Auth::user()
-            ->products()
-            ->when(Request::input('search'), function ($query, $search) {
-                $query->where('name', 'like', "%{$search}%")
-                    ->orWhere('description', 'like', "%{$search}%");
-
-            })
-            ->with('images')
-            ->paginate(10)
-            ->withQueryString()
-            ->through(function (Product $product) {
-                return array_merge(
-                    $product->only(['name', 'price', 'description']),
-                    ['image_url' => $product->images->first->image ?? public_path('images/product.png')]
-                );
-            });
+        $products = $listOfProducts->list(Auth::user(), new ProductFilter($request));
 
         return Inertia::render('Products/Index', [
             'products' => $products
